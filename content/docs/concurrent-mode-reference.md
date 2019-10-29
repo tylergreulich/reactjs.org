@@ -61,7 +61,7 @@ Blocking Mode only contains a small subset of Concurrent Mode features and is in
 
 `Suspense` lets your components "wait" for something before they can render, showing a fallback while waiting.
 
-In this example, `ProfileDetails` is waiting for an asynchronous API call to fetch some data. While we wait for `ProfileDetails` and `ProfilePhoto`, we will show the `Loading...` fallback instead. It is important to note that until all children inside `<Suspense>` has loaded, we will continue to show the fallback.
+In this example, `ProfileDetails` is waiting for an asynchronous API call to fetch some data. While we wait for `ProfileDetails` and `ProfilePhoto`, we will show the `Loading...` fallback instead. It is important to note that until all children inside `<Suspense>` have loaded, we will continue to show the fallback.
 
 `Suspense` takes two props:
 * **fallback** takes a loading indicator. The fallback is shown until all of the children of the `Suspense` component have finished rendering.
@@ -188,7 +188,7 @@ function App() {
  }
 ```
 
-This allows us to start showing the new text for the `input` immediately, which allows the webpage to feel responsive. Meanwhile, `MySlowList` "lag behind" for up to 2 seconds according to the `timeoutMs` before updating, allowing it to render with the current text in the background.
+This allows us to start showing the new text for the `input` immediately, which allows the webpage to feel responsive. Meanwhile, `MySlowList` "lags behind" for up to 2 seconds according to the `timeoutMs` before updating, allowing it to render with the current text in the background.
 
 **For an in-depth look at deferring values, you can read [Concurrent UI Patterns](/docs/concurrent-mode-patterns.html#deferring-a-value).**
 
@@ -200,4 +200,4 @@ const SUSPENSE_CONFIG = { timeoutMs: 2000 };
 
 `useDeferredValue` accepts an **optional Suspense Config** with a `timeoutMs`. This timeout (in milliseconds) tells React how long the deferred value is allowed to lag behind.
 
-React will always try to use a shorter lag when network and device allows it.
+React will always try to use a shorter lag when the network and device allow it.
